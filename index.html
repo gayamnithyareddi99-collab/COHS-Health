@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>COHS Health</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+scroll-behavior:smooth;
+}
+
+/* COLORS */
+
+:root{
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--accent:#EC4899;
+--text:#0F172A;
+--bg:#F8FAFC;
+}
+
+/* HERO */
+
+.hero{
+padding:160px 8%;
+background:var(--bg);
+}
+
+.hero-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:44px;
+color:var(--text);
+margin-bottom:20px;
+}
+
+.hero p{
+color:#555;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--primary);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.hero img{
+width:100%;
+}
+
+/* PLATFORM */
+
+.platform{
+padding:120px 8%;
+background:white;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:50px;
+}
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.platform-card{
+background:#f9fafb;
+padding:25px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.platform-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* PROCESS */
+
+.process{
+padding:120px 8%;
+background:#f9fafb;
+}
+
+.process-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+text-align:center;
+}
+
+.process img{
+width:100%;
+height:150px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+/* PRICING */
+
+.pricing{
+padding:120px 8%;
+background:white;
+}
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.price-card{
+border:1px solid #eee;
+padding:35px;
+border-radius:10px;
+text-align:center;
+}
+
+.price-card h3{
+margin-bottom:10px;
+}
+
+.price-card ul{
+list-style:none;
+margin:20px 0;
+}
+
+.price-card li{
+margin:8px 0;
+color:#555;
+}
+
+/* FAQ */
+
+.faq{
+padding:120px 8%;
+background:black;
+color:white;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+border-bottom:1px solid #333;
+padding:18px 0;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+color:#ccc;
+margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 8%;
+background:white;
+}
+
+.contact-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#aaa;
+padding:20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:20px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-container,
+.platform-grid,
+.process-grid,
+.pricing-grid,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">COHS Health</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">How It Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</div>
+
+</header>
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">COHS Health</div>
+
+<nav id="navMenu">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#process">Process</a>
+<a href="#platform">Platform</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</header>
+
+
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+padding:11px 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+font-family:'Segoe UI',sans-serif;
+box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER */
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:rgb(255, 255, 255);
+}
+
+/* NAV LINKS */
+
+#navMenu{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+/* LINKS */
+
+#navMenu a{
+text-decoration:none;
+color:#ffffff;
+font-size:15px;
+font-weight:500;
+position:relative;
+}
+
+/* HOVER UNDERLINE */
+
+#navMenu a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:rgb(255, 255, 255);
+transition:0.3s;
+}
+
+#navMenu a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+width:25px;
+height:3px;
+background:#ffffff;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+#navMenu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+flex-direction:column;
+padding:25px 0;
+gap:20px;
+display:none;
+}
+
+#navMenu.active{
+display:flex;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+/* OPEN CLOSE MENU */
+
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+menu.classList.remove("active");
+
+});
+
+});
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<!-- HERO SECTION START -->
+
+<section class="hero-section" id="home">
+
+<div class="hero-container">
+
+<!-- LEFT -->
+
+<div class="hero-left">
+
+<h1>COHS Health Oral Health Operations for Care Homes</h1>
+
+<div class="hero-divider"></div>
+
+<p class="hero-text">
+COHS Health (CareHome Oral Health Sentinel) is a UK health-tech platform that 
+transforms oral health in care homes into a structured, trackable, and audit-ready 
+care pathway from admission assessment to daily care, ongoing monitoring, and 
+clinician-ready escalation.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#platform" class="btn-primary">Explore Platform</a>
+<a href="#contact" class="btn-secondary">Request Demo</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="hero-right">
+
+<img src="cohs-hero.png" alt="COHS Health Platform">
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* HERO */
+
+.hero-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+/* SHAPES (YOUR DARK THEME) */
+
+.hero-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:220px;
+height:220px;
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.hero-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:240px;
+height:240px;
+background:#3A3B3C;
+opacity:0.15;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* HEADING */
+
+.hero-left h1{
+font-size:48px;
+color:#111;
+line-height:1.2;
+}
+
+/* DIVIDER */
+
+.hero-divider{
+width:70px;
+height:3px;
+margin:15px 0 20px;
+background:#3A3B3C;
+}
+
+/* TEXT */
+
+.hero-text{
+color:#444;
+font-size:17px;
+line-height:1.8;
+margin-bottom:30px;
+max-width:520px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+/* PRIMARY */
+
+.btn-primary{
+background:#000000;
+color:white;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* SECONDARY */
+
+.btn-secondary{
+border:2px solid #3A3B3C;
+color:#3A3B3C;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* IMAGE */
+
+.hero-right img{
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.hero-section{
+padding:80px 6%;
+}
+
+.hero-container{
+grid-template-columns:1fr;
+text-align:center;
+gap:40px;
+}
+
+/* HEADING */
+.hero-left h1{
+font-size:28px;
+line-height:1.3;
+}
+
+/* DIVIDER */
+.hero-divider{
+margin:15px auto 20px;
+}
+
+/* TEXT */
+.hero-text{
+font-size:15px;
+line-height:1.7;
+margin:0 auto 25px;
+max-width:90%;
+}
+
+/* BUTTONS STACKED */
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+gap:12px;
+}
+
+/* BUTTON SIZE */
+.btn-primary,
+.btn-secondary{
+width:100%;
+max-width:280px;
+text-align:center;
+padding:14px;
+}
+
+/* IMAGE */
+.hero-right img{
+margin-top:10px;
+border-radius:10px;
+}
+
+/* SHAPES REDUCED */
+.hero-section::before,
+.hero-section::after{
+opacity:0.08;
+}
+
+}
+
+</style>
+
+<!-- HERO SECTION END -->
+<!-- ABOUT SECTION START -->
+
+<section class="about-section" id="about">  
+
+<div class="about-container">
+
+<!-- LEFT CONTENT -->
+
+<div class="about-left">
+
+<h2>About COHS Health</h2>
+
+<div class="about-divider"></div>
+
+<p>
+COHS Health (CareHome Oral Health Sentinel) is a UK-based health-tech platform 
+designed to transform how oral health is managed inside care homes by turning 
+clinical guidance into a structured, operational care pathway.
+</p>
+
+<p>
+The platform addresses a critical gap where oral health is expected to be delivered 
+consistently but often remains informal, inconsistently recorded, and difficult to 
+monitor across daily care routines.
+</p>
+
+<p>
+COHS Health creates a continuous workflow from admission assessment to daily care, 
+ongoing monitoring, and structured escalation with clinician-ready evidence helping 
+care homes detect issues earlier, improve care consistency, and maintain 
+audit-ready governance at all times.
+</p>
+
+<div class="about-features">
+
+<div class="feature">Structured Care Pathway</div>
+<div class="feature">Daily Care Operationalisation</div>
+<div class="feature">Early Risk Detection</div>
+<div class="feature">Audit-Ready Governance</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="about-right">
+
+<div class="founder-box">
+
+<h3 class="founder-title">Founder</h3>
+
+<div class="founder-divider"></div>
+
+<p>
+<strong>Kripa Kannoth Premnath</strong> founded COHS Health with a vision to improve 
+oral-health outcomes in care homes by making care delivery more structured, 
+consistent, and measurable.
+</p>
+
+<p>
+With a clinical background as a Dental Surgeon and experience working within UK 
+healthcare settings, she brings a strong understanding of patient care, clinical 
+procedures, and the real challenges faced in maintaining oral health for vulnerable 
+populations.
+</p>
+
+<p>
+Her focus is on building a practical, scalable platform that supports care staff in 
+daily workflows while improving early detection, strengthening clinical communication, 
+and enabling better decision-making across the care ecosystem.
+</p>
+
+<a href="#" class="linkedin-btn">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.about-section{
+padding:140px 8%;
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.about-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+/* TITLE */
+
+.about-left h2{
+font-size:42px;
+margin-bottom:10px;
+color:#ffffff;
+}
+
+/* DIVIDER */
+
+.about-divider{
+width:80px;
+height:3px;
+margin:12px 0 25px;
+border-radius:3px;
+background:#ffffff;
+}
+
+/* TEXT */
+
+.about-left p{
+color:#e0e0e0;
+line-height:1.8;
+margin-bottom:20px;
+font-size:16px;
+max-width:520px;
+}
+
+/* FEATURES */
+
+.about-features{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.feature{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+color:#ffffff;
+padding:10px 14px;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+}
+
+/* FOUNDER BOX */
+
+.founder-box{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+padding:35px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+
+.founder-title{
+margin-bottom:5px;
+color:#ffffff;
+}
+
+/* DIVIDER */
+
+.founder-divider{
+width:60px;
+height:3px;
+margin-bottom:15px;
+background:#ffffff;
+}
+
+/* TEXT */
+
+.founder-box p{
+color:#e0e0e0;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+/* BUTTON */
+
+.linkedin-btn{
+display:inline-block;
+padding:10px 18px;
+background:#ffffff;
+color:#000;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.about-section{
+padding:80px 6%;
+}
+
+/* LAYOUT */
+.about-container{
+grid-template-columns:1fr;
+gap:50px;
+text-align:center;
+}
+
+/* HEADING */
+.about-left h2{
+font-size:30px;
+line-height:1.3;
+}
+
+/* DIVIDER */
+.about-divider{
+margin:14px auto 22px;
+}
+
+/* TEXT */
+.about-left p{
+margin:0 auto 18px;
+font-size:15px;
+line-height:1.7;
+max-width:95%;
+}
+
+/* FEATURES - IMPROVED STACK */
+.about-features{
+grid-template-columns:1fr;
+gap:10px;
+max-width:300px;
+margin:20px auto 0;
+}
+
+/* FEATURE CARDS */
+.feature{
+text-align:center;
+padding:12px;
+font-size:13px;
+border-radius:8px;
+}
+
+/* FOUNDER BOX */
+.founder-box{
+padding:25px;
+text-align:center;
+}
+
+/* FOUNDER TITLE */
+.founder-title{
+font-size:18px;
+}
+
+/* FOUNDER DIVIDER */
+.founder-divider{
+margin:14px auto 20px;
+}
+
+/* FOUNDER TEXT */
+.founder-box p{
+font-size:14px;
+line-height:1.6;
+}
+
+/* BUTTON */
+.linkedin-btn{
+margin-top:10px;
+display:inline-block;
+width:100%;
+max-width:220px;
+text-align:center;
+}
+
+/* OPTIONAL: REDUCE GLASS INTENSITY */
+.founder-box,
+.feature{
+backdrop-filter:none;
+}
+
+}
+</style>
+
+<!-- ABOUT SECTION END -->
+<!-- PROCESS SECTION START -->
+
+<section class="process-section" id="process">
+
+<div class="process-container">
+
+<h2 class="process-title">How COHS Health Works</h2>
+
+<div class="process-divider"></div>
+
+<p class="process-sub">
+COHS Health transforms oral health in care homes into a structured, continuous care pathway 
+from admission baseline to daily care, ongoing surveillance, and clinician-ready escalation 
+ensuring early detection, consistent delivery, and audit-ready governance.
+</p>
+
+<div class="process-grid">
+
+<!-- STEP 1 -->
+<div class="process-card">
+
+<img src="cohs1.png" class="process-img">
+
+<div class="step">01</div>
+
+<h3>Admission Baseline Assessment</h3>
+
+<p>
+At admission, care staff complete a structured oral-health baseline capturing dentition, 
+dentures, symptoms, dryness, and support needs. This ensures every resident starts 
+with a clear, standardised foundation instead of inconsistent documentation.
+</p>
+
+</div>
+
+
+<!-- STEP 2 -->
+<div class="process-card">
+
+<img src="cohs2.png" class="process-img">
+
+<div class="step">02</div>
+
+<h3>Daily Care Task Execution</h3>
+
+<p>
+COHS converts assessment findings into simple daily care actions such as brushing 
+support, denture cleaning, hydration, and comfort checks making oral care 
+consistent, visible, and operational in everyday workflows.
+</p>
+
+</div>
+
+
+<!-- STEP 3 -->
+<div class="process-card">
+
+<img src="cohs3.png" class="process-img">
+
+<div class="step">03</div>
+
+<h3>Ongoing Surveillance & Monitoring</h3>
+
+<p>
+The platform supports scheduled and event-triggered monitoring with structured 
+observations and image capture enabling early detection of deterioration instead 
+of waiting for visible or painful symptoms.
+</p>
+
+</div>
+
+
+<!-- STEP 4 -->
+<div class="process-card">
+
+<img src="cohs4.png" class="process-img">
+
+<div class="step">04</div>
+
+<h3>Risk Detection & Escalation</h3>
+
+<p>
+COHS identifies deterioration patterns and classifies residents into Routine, 
+Monitor, or Escalate states generating clinician-ready escalation bundles with 
+evidence, history, and observations for faster and better decision-making.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.process-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* CLEAN SHAPES (NEUTRAL PREMIUM) */
+
+.process-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#eaeaea;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.process-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#f3f3f3;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.process-container{
+max-width:1200px;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+/* TITLE */
+
+.process-title{
+font-size:40px;
+color:#111;
+margin-bottom:10px;
+}
+
+/* DIVIDER */
+
+.process-divider{
+width:80px;
+height:3px;
+margin:10px auto 25px;
+border-radius:3px;
+background:#000;
+}
+
+/* SUBTEXT */
+
+.process-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#444;
+line-height:1.7;
+}
+
+/* GRID */
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.process-card{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid #eee;
+border-top:4px solid #000;
+text-align:left;
+transition:0.35s;
+}
+
+.process-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+.process-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* STEP */
+
+.step{
+display:inline-block;
+background:linear-gradient(135deg,
+#000000 0%,
+#1c1c1c 30%,
+#2f2f2f 60%,
+#444444 100%
+);
+color:white;
+font-size:13px;
+font-weight:700;
+padding:6px 14px;
+border-radius:4px;
+margin-bottom:12px;
+}
+
+/* TITLE */
+
+.process-card h3{
+margin-bottom:10px;
+color:#111;
+font-size:18px;
+}
+
+/* TEXT */
+
+.process-card p{
+color:#555;
+font-size:14px;
+line-height:1.6;
+}
+
+/* TABLET + MOBILE UPGRADE */
+
+/* TABLET */
+@media(max-width:1000px){
+
+.process-section{
+padding:90px 6%;
+}
+
+/* GRID */
+.process-grid{
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+/* CARD */
+.process-card{
+padding:22px;
+border-radius:12px;
+}
+
+/* IMAGE */
+.process-img{
+height:140px;
+margin-bottom:12px;
+}
+
+/* STEP */
+.step{
+font-size:12px;
+padding:5px 12px;
+}
+
+/* TITLE */
+.process-card h3{
+font-size:16px;
+}
+
+/* TEXT */
+.process-card p{
+font-size:14px;
+line-height:1.6;
+}
+
+}
+
+
+/* MOBILE */
+@media(max-width:600px){
+
+.process-section{
+padding:70px 6%;
+}
+
+/* TITLE */
+.process-title{
+font-size:26px;
+line-height:1.3;
+}
+
+/* SUBTEXT */
+.process-sub{
+font-size:14px;
+line-height:1.6;
+margin-bottom:40px;
+padding:0 5px;
+}
+
+/* GRID */
+.process-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* CARD */
+.process-card{
+padding:20px;
+}
+
+/* IMAGE */
+.process-img{
+height:130px;
+border-radius:8px;
+}
+
+/* STEP BADGE */
+.step{
+font-size:11px;
+padding:4px 10px;
+margin-bottom:10px;
+}
+
+/* TITLE */
+.process-card h3{
+font-size:15px;
+margin-bottom:6px;
+}
+
+/* TEXT */
+.process-card p{
+font-size:13.5px;
+line-height:1.6;
+}
+
+/* REMOVE HEAVY HOVER */
+.process-card:hover{
+transform:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+}
+
+</style>
+
+<!-- PROCESS SECTION END -->
+<!-- PLATFORM SECTION START -->
+
+<section class="platform-section" id="platform">
+
+<div class="platform-container">
+
+<h2 class="platform-title">COHS Health Platform</h2>
+
+<div class="platform-divider"></div>
+
+<p class="platform-sub">
+COHS Health is a specialist oral-health operations platform for care homes. 
+It transforms oral health into a structured care pathway including baseline 
+assessment, daily care delivery, ongoing surveillance, and clinician-ready 
+escalation with audit-ready reporting.
+</p>
+
+
+<div class="platform-grid">
+
+<!-- CARD 1 -->
+<div class="platform-card">
+
+<img src="cohs1.png" class="platform-img">
+
+<h3>Structured Admission Baseline</h3>
+
+<p class="short-text">
+Start with a clear oral-health foundation.
+</p>
+
+<p class="more-text">
+COHS enables staff to complete a consistent oral-health baseline at admission, 
+capturing dentition, dentures, symptoms, dryness, and care needs ensuring 
+oral health is structured from day one.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="platform-card">
+
+<img src="cohs2.png" class="platform-img">
+
+<h3>Daily Care Workflow Engine</h3>
+
+<p class="short-text">
+Turn care plans into daily actions.
+</p>
+
+<p class="more-text">
+The platform converts assessment findings into simple daily tasks such as 
+brushing support, denture care, hydration, and comfort checks making 
+oral care operational and consistent.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="platform-card">
+
+<img src="cohs3.png" class="platform-img">
+
+<h3>Continuous Surveillance</h3>
+
+<p class="short-text">
+Monitor change over time.
+</p>
+
+<p class="more-text">
+COHS supports scheduled and event-triggered monitoring with structured 
+observations and image capture enabling early detection of deterioration 
+instead of reactive care.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="platform-card">
+
+<img src="cohs4.png" class="platform-img">
+
+<h3>Risk & Deterioration Detection</h3>
+
+<p class="short-text">
+Identify problems early.
+</p>
+
+<p class="more-text">
+The system classifies residents into Routine, Monitor, or Escalate states 
+based on observed changes helping staff act quickly and consistently 
+without relying on guesswork.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 5 -->
+<div class="platform-card">
+
+<img src="cohs5.png" class="platform-img">
+
+<h3>Clinician-Ready Escalation</h3>
+
+<p class="short-text">
+Better referrals, faster decisions.
+</p>
+
+<p class="more-text">
+COHS creates structured escalation bundles with images, history, and 
+observations improving referral quality and enabling faster clinical review.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 6 -->
+<div class="platform-card">
+
+<img src="cohs6.png" class="platform-img">
+
+<h3>Governance & Audit Dashboard</h3>
+
+<p class="short-text">
+Full visibility and compliance.
+</p>
+
+<p class="more-text">
+Managers get real-time visibility into care delivery, refusals, escalations, 
+and performance trends making oral health measurable and audit-ready.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* YOUR EXACT GRADIENT */
+.platform-section{
+padding:120px 8%;
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:#ffffff;
+}
+
+/* CONTAINER */
+.platform-container{
+max-width:1100px;
+margin:auto;
+}
+
+/* TITLE */
+.platform-title{
+font-size:40px;
+margin-bottom:10px;
+color:#ffffff;
+}
+
+/* DIVIDER */
+.platform-divider{
+width:80px;
+height:3px;
+margin:12px auto 25px;
+border-radius:3px;
+background:#000000;
+}
+
+/* SUB */
+.platform-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#e5e5e5;
+}
+
+/* GRID */
+.platform-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* CARD */
+.platform-card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.15);
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+text-align:left;
+backdrop-filter:blur(10px);
+}
+
+.platform-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* IMAGE */
+.platform-img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* TITLE */
+.platform-card h3{
+margin-bottom:8px;
+color:white;
+}
+
+/* TEXT */
+.short-text{
+color:#dcdcdc;
+margin-bottom:10px;
+}
+
+.more-text{
+display:none;
+font-size:14px;
+color:#f1f1f1;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+.learn-btn{
+background:#000000;
+color:white;
+border:none;
+padding:11px 20px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.platform-section{
+padding:80px 6%;
+}
+
+/* TITLE */
+.platform-title{
+font-size:28px;
+line-height:1.3;
+}
+
+/* SUBTEXT */
+.platform-sub{
+font-size:14px;
+line-height:1.6;
+margin-bottom:40px;
+padding:0 5px;
+}
+
+/* GRID */
+.platform-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* CARD */
+.platform-card{
+padding:20px;
+border-radius:12px;
+}
+
+/* IMAGE */
+.platform-img{
+height:150px;
+margin-bottom:12px;
+border-radius:8px;
+}
+
+/* TITLE */
+.platform-card h3{
+font-size:16px;
+margin-bottom:6px;
+}
+
+/* SHORT TEXT */
+.short-text{
+font-size:13px;
+margin-bottom:8px;
+}
+
+/* MORE TEXT */
+.more-text{
+font-size:14px;
+line-height:1.6;
+}
+
+/* BUTTON */
+.learn-btn{
+width:100%;
+text-align:center;
+padding:12px;
+font-size:14px;
+margin-top:8px;
+}
+
+/* REDUCE HEAVY EFFECTS */
+.platform-card:hover{
+transform:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+}
+
+</style>
+
+
+<script>
+
+document.querySelectorAll(".learn-btn").forEach(btn => {
+
+btn.addEventListener("click", function(){
+
+const card = this.parentElement;
+const more = card.querySelector(".more-text");
+
+if(more.style.display === "block"){
+more.style.display = "none";
+this.innerText = "Learn More";
+}else{
+more.style.display = "block";
+this.innerText = "Show Less";
+}
+
+});
+
+});
+
+</script>
+
+<!-- PLATFORM SECTION END -->
+
+
+<!-- PRICING SECTION START -->
+
+<section class="pricing-section" id="pricing">
+
+<div class="pricing-container">
+
+<h2 class="pricing-title">COHS Health Pricing</h2>
+
+<div class="title-divider"></div>
+
+<p class="pricing-sub">
+Simple pricing for care homes. COHS Health delivers structured, trackable, 
+and audit-ready oral-health workflows.
+</p>
+
+<div class="pricing-grid">
+
+<!-- ESSENTIAL -->
+
+<div class="pricing-card">
+
+<h3>Essential</h3>
+
+<p class="price">£2.50 / resident / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Admission Oral-Health Baseline</li>
+<li><span class="tick">✓</span> Daily Mouth-Care Task Workflow</li>
+<li><span class="tick">✓</span> Basic Monitoring & Logging</li>
+<li><span class="tick">✓</span> Staff Guidance Prompts</li>
+<li><span class="tick">✓</span> Email Support</li>
+</ul>
+
+<button onclick="selectPlan('Essential')">Get Started</button>
+
+</div>
+
+
+<!-- PROFESSIONAL -->
+
+<div class="pricing-card pro-card">
+
+<div class="pro-badge">Most Popular</div>
+
+<h3>Professional</h3>
+
+<p class="price">£4.50 / resident / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Everything in Essential</li>
+<li><span class="tick">✓</span> Surveillance & Risk Monitoring</li>
+<li><span class="tick">✓</span> Deterioration Detection (Routine / Monitor / Escalate)</li>
+<li><span class="tick">✓</span> Escalation Bundle for Clinician Review</li>
+<li><span class="tick">✓</span> Governance Dashboard</li>
+</ul>
+
+<button onclick="selectPlan('Professional')">Choose Plan</button>
+
+</div>
+
+
+<!-- ENTERPRISE -->
+
+<div class="pricing-card">
+
+<h3>Enterprise</h3>
+
+<p class="price">£7+ / resident / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Full COHS Health Platform</li>
+<li><span class="tick">✓</span> Multi-Home / Group Management</li>
+<li><span class="tick">✓</span> Advanced Analytics & Reporting</li>
+<li><span class="tick">✓</span> Integration with Care Systems</li>
+<li><span class="tick">✓</span> Dedicated Onboarding & Support</li>
+</ul>
+
+<button onclick="selectPlan('Enterprise')">Contact Sales</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.pricing-section{
+position:relative;
+padding:120px 8%;
+background:#ffffff;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* SUBTLE DARK SHAPES (YOUR STYLE, NOT RED) */
+
+.pricing-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#3A3B3C;
+opacity:0.08;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.pricing-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#5C5858;
+opacity:0.08;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* TITLE */
+
+.pricing-title{
+font-size:40px;
+color:#222;
+}
+
+/* DIVIDER */
+
+.title-divider{
+width:80px;
+height:3px;
+margin:12px auto 25px;
+background:#3A3B3C;
+}
+
+/* SUB */
+
+.pricing-sub{
+color:#555;
+margin-bottom:60px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* GRID */
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+position:relative;
+z-index:2;
+}
+
+/* CARD */
+
+.pricing-card{
+background:#ffffff;
+padding:40px 30px;
+border-radius:12px;
+border:1px solid #eee;
+transition:0.3s;
+position:relative;
+}
+
+.pricing-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* POPULAR */
+
+.pro-card{
+border:2px solid #3A3B3C;
+transform:scale(1.05);
+}
+
+.pro-badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:#3A3B3C;
+color:white;
+font-size:12px;
+padding:6px 18px;
+border-radius:20px;
+}
+
+/* PRICE */
+
+.price{
+margin:15px 0;
+font-size:24px;
+font-weight:700;
+color:#000;
+}
+
+/* CARD DIVIDER */
+
+.card-divider{
+height:3px;
+width:50px;
+margin:15px auto 20px;
+background:#3A3B3C;
+}
+
+/* LIST */
+
+.pricing-card ul{
+list-style:none;
+padding:0;
+margin-bottom:25px;
+text-align:left;
+}
+
+.pricing-card li{
+margin:10px 0;
+color:#444;
+font-size:14px;
+}
+
+/* TICK */
+
+.tick{
+color:#3A3B3C;
+font-weight:bold;
+margin-right:8px;
+}
+
+/* BUTTON */
+
+.pricing-card button{
+padding:12px 24px;
+background:#000000;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.pricing-card button:hover{
+transform:translateY(-2px);
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.pricing-section{
+padding:80px 6%;
+}
+
+/* TITLE */
+.pricing-title{
+font-size:28px;
+line-height:1.3;
+}
+
+/* SUBTEXT */
+.pricing-sub{
+font-size:14px;
+line-height:1.6;
+margin-bottom:40px;
+padding:0 5px;
+}
+
+/* GRID */
+.pricing-grid{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+/* CARD */
+.pricing-card{
+padding:30px 22px;
+border-radius:12px;
+}
+
+/* REMOVE SCALE FOR MOBILE */
+.pro-card{
+transform:none;
+border-width:2px;
+}
+
+/* BADGE */
+.pro-badge{
+font-size:11px;
+padding:5px 14px;
+top:-10px;
+}
+
+/* PRICE */
+.price{
+font-size:22px;
+margin:12px 0;
+}
+
+/* LIST */
+.pricing-card ul{
+margin-bottom:20px;
+}
+
+.pricing-card li{
+font-size:14px;
+line-height:1.6;
+}
+
+/* BUTTON */
+.pricing-card button{
+width:100%;
+padding:14px;
+font-size:15px;
+}
+
+/* DIVIDER */
+.card-divider{
+margin:12px auto 18px;
+}
+
+/* REDUCE HOVER EFFECTS */
+.pricing-card:hover{
+transform:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+}
+
+</style>
+
+
+<script>
+
+function selectPlan(plan){
+alert("Selected plan: " + plan);
+document.getElementById("contact").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+</script>
+
+<!-- PRICING SECTION END -->
+ <!-- FAQ SECTION START -->
+
+<section class="faq-section" id="faq">
+
+<div class="faq-container">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-divider"></div>
+
+<p class="faq-sub">
+Understand how COHS Health transforms oral health in care homes into a 
+structured, trackable, and audit-ready care pathway.
+</p>
+
+<div class="faq-list">
+
+<!-- FAQ 1 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What is COHS Health?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+COHS (CareHome Oral Health Sentinel) is a UK health-tech platform that 
+transforms oral health into a structured care pathway including assessment, 
+daily care, monitoring, and escalation.
+</p>
+</div>
+</div>
+
+<!-- FAQ 2 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How is COHS different from traditional care systems?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Unlike generic care systems, COHS provides a dedicated oral-health workflow 
+with structured assessments, continuous monitoring, and clinician-ready 
+escalation improving consistency and care quality.
+</p>
+</div>
+</div>
+
+<!-- FAQ 3 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does COHS help with early detection?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+COHS uses ongoing surveillance and structured observation to identify 
+changes over time, enabling earlier detection of deterioration before 
+conditions become severe.
+</p>
+</div>
+</div>
+
+<!-- FAQ 4 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Who is COHS designed for?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+COHS is designed for care homes, care staff, and healthcare providers 
+who need a structured and reliable way to manage oral health within 
+daily care workflows.
+</p>
+</div>
+</div>
+
+<!-- FAQ 5 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does escalation work in COHS?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+When deterioration is detected, COHS creates a structured escalation 
+bundle including observations, images, and history, enabling faster 
+and more informed clinical review.
+</p>
+</div>
+</div>
+
+<!-- FAQ 6 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What benefits does COHS provide?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+COHS improves care consistency, enables early intervention, enhances 
+referral quality, and provides audit-ready governance for care homes 
+and healthcare organisations.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* YOUR EXACT BACKGROUND */
+.faq-section{
+padding:120px 8%;
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+/* TITLE */
+.faq-title{
+text-align:center;
+color:#ffffff;
+font-size:36px;
+margin-bottom:10px;
+}
+
+/* SUB TEXT */
+.faq-sub{
+text-align:center;
+color:#e5e5e5;
+margin-bottom:45px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+}
+
+/* DIVIDER */
+.faq-divider{
+width:80px;
+height:3px;
+margin:15px auto 30px;
+background:#000000;
+border-radius:3px;
+}
+
+/* LIST */
+.faq-list{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+/* CARD */
+.faq-item{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:12px;
+padding:18px 22px;
+backdrop-filter:blur(6px);
+transition:0.3s;
+}
+
+/* HOVER */
+.faq-item:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* QUESTION */
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+color:#ffffff;
+font-size:16px;
+font-weight:600;
+}
+
+/* BUTTON */
+.toggle{
+background:#000000;
+border:none;
+color:white;
+font-size:18px;
+width:34px;
+height:34px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* ANSWER */
+.faq-answer{
+display:none;
+margin-top:14px;
+}
+
+.faq-answer p{
+color:#e0e0e0;
+line-height:1.7;
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.faq-section{
+padding:80px 6%;
+}
+
+/* TITLE */
+.faq-title{
+font-size:26px;
+line-height:1.3;
+}
+
+/* SUBTEXT */
+.faq-sub{
+font-size:14px;
+line-height:1.6;
+margin-bottom:35px;
+padding:0 5px;
+}
+
+/* DIVIDER */
+.faq-divider{
+margin:15px auto 25px;
+width:70px;
+}
+
+/* LIST SPACING */
+.faq-list{
+gap:16px;
+}
+
+/* CARD */
+.faq-item{
+padding:16px;
+border-radius:10px;
+}
+
+/* QUESTION */
+.faq-question{
+font-size:15px;
+gap:10px;
+}
+
+/* BUTTON */
+.toggle{
+width:32px;
+height:32px;
+font-size:16px;
+flex-shrink:0;
+}
+
+/* ANSWER */
+.faq-answer p{
+font-size:14px;
+line-height:1.6;
+}
+
+/* IMPROVE TAP AREA */
+.faq-question{
+padding:5px 0;
+}
+
+/* OPTIONAL: LESS HEAVY GLASS EFFECT */
+.faq-item{
+backdrop-filter:none;
+}
+
+}
+
+</style>
+
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(q=>{
+
+q.addEventListener("click",()=>{
+
+const answer = q.nextElementSibling;
+const btn = q.querySelector(".toggle");
+
+if(answer.style.display === "block"){
+answer.style.display = "none";
+btn.innerHTML = "+";
+}else{
+
+document.querySelectorAll(".faq-answer").forEach(a=>a.style.display="none");
+document.querySelectorAll(".toggle").forEach(b=>b.innerHTML="+");
+
+answer.style.display = "block";
+btn.innerHTML = "−";
+}
+
+});
+
+});
+
+</script>
+
+<!-- FAQ SECTION END -->
+<!-- CONTACT SECTION START -->
+
+<section class="contact-section" id="contact">
+
+<div class="contact-container">
+
+<!-- LEFT -->
+
+<div class="contact-left">
+
+<h2>Contact COHS Health</h2>
+<div class="contact-divider"></div>
+
+<p class="contact-text">
+Get in touch to explore how COHS can improve care consistency, 
+enable earlier detection of deterioration, and provide 
+audit-ready governance across your organisation.
+</p>
+
+<!-- INFO BOX -->
+
+<div class="info-box">
+
+<div class="contact-item">
+<h3>Email</h3>
+<p>cohshealthuk@outlook.com</p>
+</div>
+
+<div class="contact-item">
+<h3>Phone</h3>
+<p>+44 7442581207</p>
+</div>
+
+<div class="contact-item">
+<h3>Location</h3>
+<p>United Kingdom</p>
+</div> 
+
+</div>
+
+</div>
+
+
+<!-- FORM -->
+
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+<input type="hidden" name="access_key" value="945b03b6-e866-43e6-9507-68e3ff73ae53">
+<input type="hidden" name="subject" value="New Contact - COHS Health">
+<input type="hidden" name="from_name" value="COHS Website">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+<p class="note">We will respond within 24 hours.</p>
+
+<p id="form-status"></p>
+
+</form>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.contact-section{
+position:relative;
+padding:120px 8%;
+background:#ffffff;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+/* DARK SHAPES */
+
+.contact-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:220px;
+height:220px;
+background:#34282C;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.contact-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#3A3B3C;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* LEFT */
+
+.contact-left h2{
+font-size:40px;
+color:#000000;
+}
+
+/* DIVIDER */
+
+.contact-divider{
+width:60px;
+height:3px;
+margin:12px 0 20px;
+background:#0C090A;
+}
+
+/* TEXT */
+
+.contact-text{
+color:#333;
+line-height:1.8;
+margin-bottom:35px;
+max-width:480px;
+}
+
+/* INFO BOX */
+
+.info-box{
+background:#f5f5f5;
+border-left:4px solid #000000;
+padding:25px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+/* ITEMS */
+
+.contact-item h3{
+font-size:14px;
+color:#000000;
+}
+
+.contact-item p{
+font-size:14px;
+color:#222;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+/* INPUT */
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:14px;
+outline:none;
+}
+
+/* FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:#000000;
+box-shadow:0 0 0 2px rgba(0,0,0,0.1);
+}
+
+/* BUTTON */
+
+.contact-form button{
+margin-top:10px;
+background:linear-gradient(135deg,
+#34282C,
+#3B3131,
+#343434,
+#3A3B3C,
+#454545,
+#5C5858
+);
+color:white;
+border:none;
+padding:14px;
+font-weight:600;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+transform:translateY(-2px);
+opacity:0.9;
+}
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#000000;
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.contact-section{
+padding:70px 6%;
+text-align:center;
+}
+
+/* LAYOUT */
+.contact-container{
+grid-template-columns:1fr;
+gap:50px;
+}
+
+/* TITLE SPACING */
+.contact-left h2{
+font-size:28px;
+line-height:1.3;
+}
+
+/* DIVIDER */
+.contact-divider{
+margin:14px auto 22px;
+}
+
+/* TEXT */
+.contact-text{
+margin:0 auto 25px;
+font-size:15px;
+line-height:1.7;
+max-width:95%;
+}
+
+/* INFO BOX */
+.info-box{
+margin:0 auto;
+max-width:320px;
+text-align:left;
+padding:20px;
+gap:16px;
+border-radius:12px;
+}
+
+/* ITEMS */
+.contact-item h3{
+font-size:13px;
+}
+
+.contact-item p{
+font-size:14px;
+}
+
+/* FORM */
+.contact-form{
+padding:25px;
+gap:12px;
+}
+
+/* INPUT */
+.contact-form input,
+.contact-form textarea{
+font-size:14px;
+padding:13px;
+}
+
+/* BUTTON */
+.contact-form button{
+padding:14px;
+width:100%;
+font-size:15px;
+}
+
+/* NOTE */
+.note{
+font-size:12px;
+}
+
+/* STATUS */
+#form-status{
+font-size:13px;
+}
+
+/* REDUCE SHAPE VISUAL HEAVINESS */
+.contact-section::before,
+.contact-section::after{
+opacity:0.08;
+}
+
+}
+
+</style>
+
+
+<script>
+
+const form = document.querySelector(".contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async function(e) {
+e.preventDefault();
+
+const data = new FormData(form);
+
+const response = await fetch(form.action, {
+method: "POST",
+body: data
+});
+
+if (response.ok) {
+status.innerHTML = "✅ Message sent successfully!";
+status.style.color = "green";
+form.reset();
+} else {
+status.innerHTML = "❌ Something went wrong. Try again.";
+status.style.color = "red";
+}
+
+});
+
+</script>
+
+<!-- CONTACT SECTION END -->
+<!-- FOOTER START -->
+
+<style>
+
+/* 🎯 COHS DARK COLOR SYSTEM */
+:root{
+--bg1:#34282C;
+--bg2:#3B3131;
+--bg3:#343434;
+--bg4:#3A3B3C;
+--bg5:#3C4142;
+--bg6:#454545;
+--bg7:#4D4D4F;
+--bg8:#413839;
+--bg9:#3D3C3A;
+--bg10:#463E3F;
+
+--text-main:#ffffff;
+--text-soft:#ffffff;
+
+/* DARK HEADINGS */
+--accent:#000000;
+}
+
+/* FOOTER BACKGROUND */
+.footer{
+position:relative;
+overflow:hidden;
+
+background:linear-gradient(135deg,
+#34282C 0%,
+#3B3131 20%,
+#343434 40%,
+#3A3B3C 60%,
+#454545 80%,
+#5C5858 100%
+);
+
+color:var(--text-main);
+padding:100px 8% 40px;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* LIGHT SHAPES */
+.footer::before{
+content:"";
+position:absolute;
+top:-80px;
+right:-80px;
+width:280px;
+height:280px;
+background:rgba(255,255,255,0.05);
+border-radius:30px;
+transform:rotate(45deg);
+}
+
+.footer::after{
+content:"";
+position:absolute;
+bottom:-80px;
+left:-80px;
+width:240px;
+height:240px;
+background:rgba(255,255,255,0.04);
+border-radius:30px;
+transform:rotate(45deg);
+}
+
+/* CONTAINER */
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:70px;
+position:relative;
+z-index:2;
+}
+
+/* HEADINGS */
+.footer h3,
+.footer h4{
+color:#000000;
+}
+
+/* DIVIDER */
+.footer-divider{
+width:60px;
+height:3px;
+margin:12px 0 20px;
+border-radius:3px;
+background:#0C090A;
+}
+
+/* TEXT */
+.footer-left p{
+font-size:14px;
+line-height:1.8;
+color:#ffffff;
+max-width:420px;
+}
+
+/* LINKS */
+.footer-links a{
+display:block;
+text-decoration:none;
+color:#ffffff;
+margin-bottom:10px;
+font-size:14px;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:#ddd;
+transform:translateX(6px);
+}
+
+/* BOTTOM */
+.footer-bottom{
+max-width:1100px;
+margin:60px auto 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:20px;
+font-size:13px;
+color:#ffffff;
+}
+
+/* BUTTON */
+.top-btn{
+background:#000000;
+color:white;
+border:none;
+width:44px;
+height:44px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+transition:0.3s;
+}
+
+.top-btn:hover{
+transform:translateY(-5px) scale(1.08);
+}
+
+/* MOBILE UPGRADE */
+
+@media(max-width:900px){
+
+.footer{
+padding:70px 6% 25px;
+text-align:center;
+}
+
+/* CONTAINER */
+.footer-container{
+grid-template-columns:1fr;
+gap:40px;
+justify-items:center;
+}
+
+/* LEFT + LINKS */
+.footer-left,
+.footer-links{
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:8px;
+}
+
+/* HEADING */
+.footer h3,
+.footer h4{
+font-size:18px;
+}
+
+/* DIVIDER */
+.footer-divider{
+margin:12px auto 18px;
+width:50px;
+}
+
+/* TEXT */
+.footer-left p{
+font-size:14px;
+line-height:1.7;
+max-width:90%;
+margin:0 auto;
+}
+
+/* LINKS */
+.footer-links a{
+font-size:14px;
+margin-bottom:8px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+flex-direction:column;
+gap:12px;
+margin-top:40px;
+padding-top:15px;
+text-align:center;
+}
+
+/* COPYRIGHT */
+.footer-bottom p{
+font-size:12px;
+}
+
+/* BUTTON */
+.top-btn{
+width:42px;
+height:42px;
+font-size:16px;
+}
+
+/* REDUCE DECOR SHAPES */
+.footer::before,
+.footer::after{
+opacity:0.06;
+}
+
+}
+
+/* CENTER DIVIDER */
+.footer-divider{
+width:60px;
+height:3px;
+margin:12px auto 20px;
+border-radius:3px;
+background:#0C090A;
+}
+
+</style>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+<div class="footer-left">
+
+<h3>COHS Health</h3>
+<div class="footer-divider"></div>
+
+<p>
+CareHome Oral Health Sentinel (COHS) is a UK-based health-tech platform 
+designed to transform oral health in care homes into a structured, 
+trackable, and auditable care pathway.
+</p>
+
+</div>
+
+<!-- CENTER -->
+<div class="footer-links">
+
+<h4>Platform</h4>
+<div class="footer-divider"></div>
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">Process</a>
+<a href="#pricing">Pricing</a>
+
+</div>
+
+<!-- RIGHT -->
+<div class="footer-links">
+
+<h4>Company</h4>
+<div class="footer-divider"></div>
+
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+<div class="footer-bottom">
+
+<p>© 2026 COHS Health. All rights reserved.</p>
+
+<button class="top-btn" onclick="scrollToTop()">↑</button>
+
+</div>
+
+</footer>
+
+<script>
+function scrollToTop(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+</script>
+
+<!-- FOOTER END -->
+
+</body>
+</html>
